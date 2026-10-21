@@ -1,0 +1,8 @@
+{
+  "name": "Health Myth Buster",
+  "description": "Evidence-based health fact-checker verifying health claims, medical myths, and nutritional science.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

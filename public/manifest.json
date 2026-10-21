@@ -1,0 +1,20 @@
+{
+  "id": "/",
+  "name": "Health Myth Buster",
+  "short_name": "MythBuster",
+  "description": "Evidence-based health fact-checker verifying health claims, medical myths, and nutritional science.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFFFFF",
+  "theme_color": "#0284C7",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

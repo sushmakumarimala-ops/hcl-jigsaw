@@ -1,0 +1,132 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile data for registered users",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "User unique ID matching auth.uid",
+          "maxLength": 128
+        },
+        "email": {
+          "type": "string",
+          "description": "User email address",
+          "maxLength": 256
+        },
+        "displayName": {
+          "type": "string",
+          "description": "User display name",
+          "maxLength": 100
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Creation ISO timestamp",
+          "maxLength": 64
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Last update ISO timestamp",
+          "maxLength": 64
+        }
+      },
+      "required": ["id", "email", "displayName", "createdAt"]
+    },
+    "Bookmark": {
+      "title": "Bookmark",
+      "description": "Bookmarked health myth or fact saved by the user",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique bookmark ID",
+          "maxLength": 128
+        },
+        "userId": {
+          "type": "string",
+          "description": "Owner user ID",
+          "maxLength": 128
+        },
+        "claim": {
+          "type": "string",
+          "description": "Health claim text",
+          "maxLength": 500
+        },
+        "verdict": {
+          "type": "string",
+          "description": "Claim verdict such as TRUE, FALSE, or PARTIALLY TRUE",
+          "maxLength": 50
+        },
+        "source": {
+          "type": "string",
+          "description": "Source citation or health study reference",
+          "maxLength": 300
+        },
+        "explanation": {
+          "type": "string",
+          "description": "Evidence-based summary explanation",
+          "maxLength": 1000
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp when bookmarked",
+          "maxLength": 64
+        }
+      },
+      "required": ["id", "userId", "claim", "verdict", "explanation", "createdAt"]
+    },
+    "ReportedClaim": {
+      "title": "ReportedClaim",
+      "description": "Health claim submitted by users when missing in the database",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique report ID",
+          "maxLength": 128
+        },
+        "claim": {
+          "type": "string",
+          "description": "Health claim text to be researched by team",
+          "maxLength": 500
+        },
+        "userId": {
+          "type": "string",
+          "description": "User ID of submitter (or anonymous)",
+          "maxLength": 128
+        },
+        "userEmail": {
+          "type": "string",
+          "description": "Submitter email for notifications",
+          "maxLength": 256
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of the research request",
+          "maxLength": 50
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp of submission",
+          "maxLength": 64
+        }
+      },
+      "required": ["id", "claim", "status", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Private user profile collection restricted to the document owner"
+    },
+    "/users/{userId}/bookmarks/{bookmarkId}": {
+      "schema": "Bookmark",
+      "description": "User saved health myths and verified facts"
+    },
+    "/reportedClaims/{reportId}": {
+      "schema": "ReportedClaim",
+      "description": "Submitted unverified health claims queued for editorial review"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <rect width="512" height="512" rx="128" fill="#0284C7"/>
+  {/* Medical Cross */}
+  <path d="M226 120 C226 106.7 236.7 96 250 96 L262 96 C275.3 96 286 106.7 286 120 L286 226 L392 226 C405.3 226 416 236.7 416 250 L416 262 C416 275.3 405.3 286 392 286 L286 286 L286 392 C286 405.3 275.3 416 262 416 L250 416 C236.7 416 226 405.3 226 392 L226 286 L120 286 C106.7 286 96 275.3 96 262 L96 250 C96 236.7 106.7 226 120 226 L226 226 Z" fill="#FFFFFF"/>
+  {/* Green Check Shield */}
+  <circle cx="360" cy="360" r="88" fill="#10B981" stroke="#FFFFFF" stroke-width="12"/>
+  <path d="M330 360 L350 380 L395 335" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
